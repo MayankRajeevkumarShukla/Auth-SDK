@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const authRoutes = require("./routes/authRoutes");
-
+const errorHandler = require("./middleware/errorHandler");
 dotenv.config();
 console.log("MongoDB URL:", process.env.MONGO_URL);
 
@@ -18,7 +18,7 @@ app.use(cors({
 }));
 app.use(morgan("dev")); // Log HTTP requests
 app.use(helmet()); // Add security headers
-
+app.use(errorHandler);
 const mongoURI = "mongodb+srv://shuklamayank0407:4xLuZreIGbtutKkN@cluster0.9f88j.mongodb.net/mydatabase";
 if (!mongoURI) {
     console.error("Error: MongoDB URL is not defined in environment variables");
