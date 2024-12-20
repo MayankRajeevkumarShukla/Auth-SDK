@@ -5,20 +5,17 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const authRoutes = require("./routes/authRoutes");
-const errorHandler = require("./middleware/errorHandler");
+const errorHandler = require("./middleware/erroHandler");
 dotenv.config();
 console.log("MongoDB URL:", process.env.MONGO_URL);
 
 const app = express();
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
-app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-}));
+app.use(cors());
 app.use(morgan("dev")); // Log HTTP requests
 app.use(helmet()); // Add security headers
-app.use(errorHandler);
+
 const mongoURI = "mongodb+srv://shuklamayank0407:4xLuZreIGbtutKkN@cluster0.9f88j.mongodb.net/mydatabase";
 if (!mongoURI) {
     console.error("Error: MongoDB URL is not defined in environment variables");
@@ -31,6 +28,7 @@ app.get("/", (req, res) => {
     res.send("API is running");
 });
 app.use("/api/auth", authRoutes);
+app.use(errorHandler);
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ message: "Something went wrong!" });
