@@ -1,4 +1,4 @@
-import React, { Children, useState } from 'react'
+import React from 'react'
 import {Navigate} from "react-router-dom"
 
 function ProtectedRoute({children}) {
@@ -8,7 +8,7 @@ function ProtectedRoute({children}) {
         return <Navigate to="/login"></Navigate>
     }  
 
-    return childern 
+    return children 
 
 }
 
