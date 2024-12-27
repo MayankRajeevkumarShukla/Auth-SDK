@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-function Login() {
+function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handelSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "http://localhost:5000/api/auth/signup",
         {
           email,
           password,
@@ -27,10 +27,10 @@ function Login() {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
       <form
-        onSubmit={handelSubmit}
+        onSubmit={handleSubmit}
         className="w-full max-w-md bg-white p-8 shadow-md rounded-lg"
       >
-        <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center">Signup</h2>
         {error && (
           <p className="text-red-500 text-sm mb-4 text-center">{error}</p>
         )}
@@ -64,11 +64,11 @@ function Login() {
           type="submit"
           className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
         >
-          Login
+          Sign Up
         </button>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Signup;
