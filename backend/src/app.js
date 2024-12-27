@@ -12,7 +12,7 @@ console.log("MongoDB URL:", process.env.MONGO_URL);
 const app = express();
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
-app.use(cors());
+app.use(cors({origin: 'http://localhost:5173'}));
 app.use(morgan("dev")); // Log HTTP requests
 app.use(helmet()); // Add security headers
 

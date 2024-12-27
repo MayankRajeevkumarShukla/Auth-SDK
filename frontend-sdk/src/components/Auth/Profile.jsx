@@ -13,7 +13,7 @@ function Profile() {
           return;
         }
         const response = await axios.get(
-          "http://localhost:5000/api/auth/profile",
+          "http://localhost:8000/api/auth/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`,
