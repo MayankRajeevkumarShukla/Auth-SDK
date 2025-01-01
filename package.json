@@ -1,5 +1,5 @@
 {
-  "name": "myy-aauth-sdk",
+  "name": "my-authentication-sdk",
   "version": "1.0.0",
   "description": "Authentication SDK with automated dependency installation",
   "main": "index.js",
