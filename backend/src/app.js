@@ -16,7 +16,7 @@ app.use(cors({origin: 'http://localhost:5173'}));
 app.use(morgan("dev")); // Log HTTP requests
 app.use(helmet()); // Add security headers
 
-const mongoURI = "mongodb+srv://shuklamayank0407:4xLuZreIGbtutKkN@cluster0.9f88j.mongodb.net/mydatabase";
+const mongoURI = process.env.MONGO_URL;
 if (!mongoURI) {
     console.error("Error: MongoDB URL is not defined in environment variables");
     process.exit(1); 

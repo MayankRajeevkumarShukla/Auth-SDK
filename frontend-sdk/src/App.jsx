@@ -7,9 +7,14 @@ import Dashboard from "./pages/Dashboard";
 import Profile from "./components/Auth/Profile";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Navbar from "./components/Navbar"
 
 function App() {
   return (
+    <>
+    
+   
+   <Navbar/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
@@ -32,6 +37,7 @@ function App() {
       />
       <Route path="*" element={<NotFound />} />
     </Routes>
+    </>
   );
 }
 
