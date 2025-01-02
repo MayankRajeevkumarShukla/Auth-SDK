@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate,Link } from "react-router-dom";
 function Home() {
   const isAuthenticated = !!localStorage.getItem("token");
 
