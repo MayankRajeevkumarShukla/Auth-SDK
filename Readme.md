@@ -22,7 +22,7 @@ This will automatically create the project structure and all required files in t
 The SDK generates the following folder structure:
 
 ```
-.
+
 ├── backend
 │   └── src
 │       ├── controllers
