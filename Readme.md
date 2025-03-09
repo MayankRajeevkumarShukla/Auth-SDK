@@ -1,4 +1,4 @@
-# Test Auth SDK
+ # Test Auth SDK
 
 ## Overview
 The **Test Auth SDK** is a complete authentication package for React and Node.js applications. It allows developers to quickly set up authentication in their projects with a pre-defined folder structure for both frontend and backend. This package includes React components, routes, and backend logic to handle user authentication.
